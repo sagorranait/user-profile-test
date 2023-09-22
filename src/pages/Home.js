@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { storeUser } from '../stateManagement/redux/userSlice';
 import toast from 'react-hot-toast';
 
 import UserItem from '../components/UserItem';
 import UserItemSkeleton from '../components/UserItemSkeleton';
 
 function Home() {
+  const dispatch = useDispatch();
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +19,7 @@ function Home() {
 
         setTimeout(async () => {
           const results = await response.json();
+          dispatch(storeUser({ user: results }));
           setUsers(results);
           setLoading(false);
         }, 500);
@@ -26,7 +30,7 @@ function Home() {
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='h-[700px] bg-white p-10 rounded-2xl'>

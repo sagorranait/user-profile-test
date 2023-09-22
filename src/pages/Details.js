@@ -2,12 +2,17 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
 import { 
+  BiBox,
+  BiSolidMap,
   BiLogoOkRu,
   BiSolidUser, 
   BiLogoGmail, 
+  BiSolidCity,
   BiSolidPhone, 
+  BiSolidMapPin,
   BiSolidBusiness, 
-  BiSolidBabyCarriage, 
+  BiLogoDeviantart,
+  BiSolidBabyCarriage,
 } from "react-icons/bi";
 
 import DetailsItem from '../components/DetailsItem';
@@ -40,7 +45,6 @@ function Details() {
             title='Contact Number' 
             value={'+6152448902'} 
           />
-
           <DetailsItem 
             icon={<BiSolidBusiness className='text-base mt-1 text-slate-400' />} 
             title='Designation' 
@@ -56,7 +60,31 @@ function Details() {
             title='Date of Birth' 
             value={'1903-03-30'} 
           />
-          
+          <DetailsItem 
+            icon={<BiLogoDeviantart className='text-lg mt-1 text-slate-400' />} 
+            title='Street' 
+            value={'4545 Ashley Plains'} 
+          />
+          <DetailsItem 
+            icon={<BiSolidMapPin className='text-lg mt-1 text-slate-400' />} 
+            title='State' 
+            value={'Utah'} 
+          />
+          <DetailsItem 
+            icon={<BiSolidCity className='text-lg mt-1 text-slate-400' />} 
+            title='City' 
+            value={'Cooperborough'} 
+          />
+          <DetailsItem 
+            icon={<BiBox className='text-lg mt-1 text-slate-400' />} 
+            title='Zipcode' 
+            value={'85674'} 
+          />
+          <DetailsItem 
+            icon={<BiSolidMap className='text-lg mt-1 text-slate-400' />} 
+            title='Country' 
+            value={'Guadeloupe'} 
+          />
         </div>
       </div>
     </>
