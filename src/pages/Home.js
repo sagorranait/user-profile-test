@@ -18,7 +18,7 @@ function Home() {
           const results = await response.json();
           setUsers(results);
           setLoading(false);
-        }, 1000);
+        }, 500);
       } catch (error) {
         toast.error(error);
         setLoading(false);
@@ -49,4 +49,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
