@@ -29,7 +29,7 @@ function Details() {
   
   return (
     <>    
-      <button onClick={backButton} className='flex items-center gap-2 py-5'>
+      <button onClick={backButton} className='flex items-center gap-2 py-3 m-5 lg:py-5 xl:m-0'>
         <BsArrowLeft className='text-xl text-primary'/>
         <span>Back</span>
       </button>
@@ -37,9 +37,9 @@ function Details() {
             user.map((item, index) => {
               const { city, country, date_of_birth, email, gender, imgUrl, job, name, phone, state, street, zipcode} = item;
               return (
-                <div key={index} className='h-[650px] bg-white p-10 rounded-2xl flex items-start gap-20'>
+                <div key={index} className='bg-white p-10 m-5 rounded-2xl flex items-center lg:items-start gap-10 flex-col lg:gap-20 lg:flex-row lg:h-[650px] xl:m-0'>
                   <img src={imgUrl} alt={name} className='w-52 h-52 rounded-2xl object-cover border border-primary' />
-                  <div className='w-full grid grid-cols-3 gap-10'>
+                  <div className='lg:w-full grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 xl:gap-16'>
                     <DetailsItem 
                       icon={<BiSolidUser className='text-base mt-1 text-slate-400' />} 
                       title='Full Name' 
