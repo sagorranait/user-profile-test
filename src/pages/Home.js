@@ -34,15 +34,15 @@ function Home() {
   
 
   return (
-    <div className='h-[700px] bg-white p-10 rounded-2xl'>
-      <div className="grid grid-cols-1 gap-5">
+    <div className='p-5 m-5 bg-white lg:h-[700px] lg:p-8 xl:p-10 xl:m-0 rounded-2xl'>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
         { loading && Array(7).fill().map((_, index) => <UserItemSkeleton key={index} />)}
         { 
           users?.map( user => <UserItem 
             key={user.id}
             user={user}
           />) 
-        }        
+        }   
       </div>
     </div>
   )

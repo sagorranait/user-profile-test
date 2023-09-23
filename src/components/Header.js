@@ -1,12 +1,8 @@
 import { BsBell } from "react-icons/bs";
-import { useUserContext } from "../stateManagement/contextApi/UserContext";
 
-function Header() {
-  const { selectedUser } = useUserContext();
-  console.log(selectedUser);
-  
+function Header() {  
   return (
-    <div className="py-8 flex items-center justify-between">
+    <div className="px-4 sm:px-4 xl:px-0 py-8 flex items-center justify-between">
       <h1 className="text-2xl font-bold">Users</h1>
       <div className="flex items-center gap-8">
         <BsBell className="text-xl text-black cursor-pointer"/>
