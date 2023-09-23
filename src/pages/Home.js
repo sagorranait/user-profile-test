@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { storeUser } from '../stateManagement/redux/userSlice';
-import toast from 'react-hot-toast';
 
 import UserItem from '../components/UserItem';
 import UserItemSkeleton from '../components/UserItemSkeleton';
@@ -31,6 +31,7 @@ function Home() {
 
     fetchData();
   }, [dispatch]);
+  
 
   return (
     <div className='h-[700px] bg-white p-10 rounded-2xl'>
@@ -39,13 +40,7 @@ function Home() {
         { 
           users?.map( user => <UserItem 
             key={user.id}
-            userId={user.id}
-            url={user.imgUrl}
-            name={user.name}
-            email={user.email}
-            gender={user.gender}
-            designation={user.job}
-            address={`${user.state}, ${user.country}`}
+            user={user}
           />) 
         }        
       </div>

@@ -27,19 +27,17 @@ function Details() {
 
   const user = users.filter(item => item.id === parseInt(id));
   
-
   return (
     <>    
       <button onClick={backButton} className='flex items-center gap-2 py-5'>
         <BsArrowLeft className='text-xl text-primary'/>
         <span>Back</span>
       </button>
-      <div className='h-[650px] bg-white p-10 rounded-2xl flex items-start gap-20'>
           {
-            user.map(item => {
+            user.map((item, index) => {
               const { city, country, date_of_birth, email, gender, imgUrl, job, name, phone, state, street, zipcode} = item;
               return (
-                <>
+                <div key={index} className='h-[650px] bg-white p-10 rounded-2xl flex items-start gap-20'>
                   <img src={imgUrl} alt={name} className='w-52 h-52 rounded-2xl object-cover border border-primary' />
                   <div className='w-full grid grid-cols-3 gap-10'>
                     <DetailsItem 
@@ -98,11 +96,10 @@ function Details() {
                       value={country} 
                     />
                   </div>
-                </>
+                </div>
               );
             })
           }
-      </div>
     </>
   )
 }
